@@ -1,0 +1,8 @@
+1001*Simon Smith*2021-04-01 08:00:00*2hrs*Boxing - Basic*
+1001*Simon Smith*2021-04-01 10:00:00*3hrs*Dancing - Basic*
+1001*Simon Smith*2021-04-01 15:00:00*2hrs*Workout - Basic*
+1002*Jack William*2021-04-01 18:00:00*2hrs*Boxing - Basic*
+1001*Simon Smith*2021-04-02 12:00:00*2hrs*Boxing - Basic*
+1001*Simon Smith*2021-04-01 17:00:00*1.5hrs*Boxing - Advance*
+1001*Simon Smith*2021-04-08 13:00:00*2hrs*Running - Basic*
+1002*Jack William*2021-04-01 15:00:00*1hrs*Running - Basic*

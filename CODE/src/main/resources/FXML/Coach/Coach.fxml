@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1600.0" stylesheets="@../../CSS/tabPane.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CoachMyPageController">
+   <center>
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" styleClass="tab" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="My page">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <AnchorPane prefHeight="333.0" prefWidth="1407.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="61.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="name" layoutX="381.0" layoutY="33.0" prefHeight="30.0" prefWidth="54.0" text="name:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="381.0" layoutY="93.0" prefHeight="30.0" prefWidth="74.0" text="gender:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="381.0" layoutY="153.0" prefHeight="30.0" prefWidth="54.0" text="age:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="381.0" layoutY="213.0" prefHeight="30.0" prefWidth="54.0" text="Email:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="688.0" layoutY="33.0" prefHeight="30.0" prefWidth="77.0" text="address:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="689.0" layoutY="93.0" prefHeight="30.0" prefWidth="84.0" text="phone:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="688.0" layoutY="153.0" prefHeight="30.0" prefWidth="54.0" text="mark:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="688.0" layoutY="213.0" prefHeight="30.0" prefWidth="86.0" text="category:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="nameText" editable="false" layoutX="463.0" layoutY="36.0" />
+                              <TextField fx:id="genderText" editable="false" layoutX="463.0" layoutY="96.0" />
+                              <TextField fx:id="ageText" editable="false" layoutX="463.0" layoutY="157.0" />
+                              <TextField fx:id="emailText" editable="false" layoutX="463.0" layoutY="217.0" />
+                              <TextField fx:id="addressText" editable="false" layoutX="775.0" layoutY="37.0" />
+                              <TextField fx:id="phoneText" editable="false" layoutX="775.0" layoutY="97.0" />
+                              <TextField fx:id="markText" editable="false" layoutX="775.0" layoutY="157.0" />
+                              <TextField fx:id="categoryText" editable="false" layoutX="775.0" layoutY="217.0" />
+                              <Label layoutX="1026.0" layoutY="14.0" text="individual description" />
+                              <TextArea fx:id="descriptionText" editable="false" layoutX="1026.0" layoutY="57.0" prefHeight="200.0" prefWidth="200.0" />
+                              <Button fx:id="Save" layoutX="1098.0" layoutY="278.0" mnemonicParsing="false" onAction="#Save" text="Save" />
+                              <Button fx:id="Edit" layoutX="1179.0" layoutY="278.0" mnemonicParsing="false" onAction="#Edit" text="Edit" />
+                              <ImageView fx:id="coachImage" fitHeight="280.0" fitWidth="280.0" layoutX="36.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </AnchorPane>
+                     </center>
+                     <bottom>
+                        <SplitPane prefHeight="386.0" prefWidth="1407.0" BorderPane.alignment="CENTER">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="322.0" prefWidth="982.0">
+                                 <children>
+                                    <TitledPane animated="false" layoutY="1.0" prefHeight="386.0" prefWidth="983.0" text="Timetable">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="356.0" prefWidth="740.0">
+                                             <children>
+                                                <DatePicker fx:id="startTimePicker" layoutX="411.0" layoutY="22.0" onAction="#dateAction" prefHeight="30.0" prefWidth="223.0" />
+                                                <Label layoutX="375.0" layoutY="28.0" text="Date:" />
+                                                <Label layoutX="21.0" layoutY="27.0" text="Search for:" />
+                                                <TextField fx:id="searchedContent" layoutX="101.0" layoutY="21.0" prefHeight="30.0" prefWidth="180.0" />
+                                                <Button fx:id="search" layoutX="290.0" layoutY="23.0" mnemonicParsing="false" onAction="#searchButtonAction" text="Search" />
+                                                <Button fx:id="displayAllButton" layoutX="653.0" layoutY="19.0" mnemonicParsing="false" onAction="#displayAllAction" prefHeight="34.0" prefWidth="296.0" text="Clear and Display All Contents" textAlignment="CENTER" wrapText="true" />
+                                                <TableView fx:id="myPageDateReturn" layoutX="13.0" layoutY="68.0" prefHeight="269.0" prefWidth="952.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="coachName" editable="false" prefWidth="171.0" sortable="false" text="Coach's Name" />
+                                                      <TableColumn fx:id="coachID" editable="false" prefWidth="125.0" sortable="false" text="Student's ID" />
+                                                      <TableColumn fx:id="startTime" editable="false" prefWidth="162.0" sortable="false" text="Start Time " />
+                                                      <TableColumn fx:id="duration" editable="false" prefWidth="177.0" sortable="false" text="Duration" />
+                                                      <TableColumn fx:id="courseName" editable="false" prefWidth="316.0" sortable="false" text="Course Name" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </TitledPane>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </bottom>
+                  </BorderPane>
+               </content>
+          </Tab>
+          <Tab text="Magement">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <AnchorPane prefHeight="687.0" prefWidth="565.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TitledPane animated="false" prefHeight="688.0" prefWidth="568.0" text="Time table edit">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="657.0" prefWidth="519.0">
+                                       <children>
+                                          <DatePicker fx:id="startTimePicker1" layoutX="422.0" layoutY="21.0" onAction="#dateAction1" prefHeight="26.0" prefWidth="128.0" />
+                                          <Label layoutX="381.0" layoutY="26.0" text="Date:" />
+                                          <Label layoutX="7.0" layoutY="23.0" prefHeight="20.0" prefWidth="72.0" text="Search for:" />
+                                          <TextField fx:id="searchedContent1" layoutX="88.0" layoutY="19.0" prefHeight="30.0" prefWidth="208.0" />
+                                          <Button fx:id="search1" layoutX="304.0" layoutY="22.0" mnemonicParsing="false" onAction="#searchButtonAction1" text="Search" />
+                                          <Button fx:id="displayAllButton1" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#displayAllAction1" prefHeight="26.0" prefWidth="545.0" text="Display All Available Sessions" textAlignment="CENTER" wrapText="true">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Button>
+                                          <TableView fx:id="reserveDate" layoutX="13.0" layoutY="104.0" prefHeight="549.0" prefWidth="539.0">
+                                             <columns>
+                                                <TableColumn fx:id="coachName1" editable="false" prefWidth="111.94584655761719" sortable="false" text="Coach's Name" />
+                                                <TableColumn fx:id="coachID1" editable="false" prefWidth="63.130584716796875" sortable="false" text="Coach ID" />
+                                                <TableColumn fx:id="startTime1" editable="false" prefWidth="144.98931884765625" sortable="false" text="Start Time" />
+                                                <TableColumn fx:id="duration1" editable="false" prefWidth="73.51068115234375" sortable="false" text="Duration" />
+                                                <TableColumn fx:id="courseName1" editable="false" prefWidth="143.9993896484375" sortable="false" text="Course Name" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </left>
+                     <right>
+                        <AnchorPane prefHeight="1115.0" prefWidth="1061.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TitledPane animated="false" prefHeight="688.0" prefWidth="841.0" text="Video edit">
+                                 <content>
+                                    <AnchorPane fx:id="videoEditPane" prefHeight="200.0" prefWidth="200.0" />
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </right>
+                  </BorderPane>
+               </content>
+          </Tab>
+            <Tab text="Vedio">
+               <content>
+                  <AnchorPane fx:id="videoShowPane" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <left>
+      <VBox prefHeight="600.0" prefWidth="193.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="MyPageButton" mnemonicParsing="false" onAction="#ClickMyPageButton" prefHeight="81.0" prefWidth="206.0" text="Mypage" />
+            <Button fx:id="ManagementButton" mnemonicParsing="false" onAction="#ClickManagementButton" prefHeight="81.0" prefWidth="206.0" text="Mangement" />
+            <Button fx:id="VideoButton" mnemonicParsing="false" onAction="#ClickVideoButton" prefHeight="81.0" prefWidth="206.0" text="Video" />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <AnchorPane prefHeight="74.0" prefWidth="1600.0" style="-fx-background-color: white" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="1307.0" layoutY="27.0" prefHeight="20.0" prefWidth="156.0" text="Welcome Coach 1001" />
+            <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="1485.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="backButton" layoutX="35.0" layoutY="25.0" mnemonicParsing="false" onAction="#backAction" text="Back to FrontPage" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

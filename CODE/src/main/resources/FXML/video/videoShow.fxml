@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="915.0" prefWidth="1407.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.videoShowController">
+   <children>
+      <ScrollPane layoutY="78.0" prefHeight="838.0" prefWidth="1407.0">
+         <content>
+            <FlowPane fx:id="videoShowPane" prefHeight="838.0" prefWidth="1407.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1600.0" stylesheets="@../../CSS/tabPane.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MemberPageController">
+    <center>
+        <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" styleClass="tab" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab fx:id="MypageTab" styleClass="tab" text="My page">
+                    <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                                <AnchorPane prefHeight="333.0" prefWidth="1407.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="61.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label layoutX="371.0" layoutY="33.0" prefHeight="30.0" prefWidth="57.0" text="Name:">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="359.0" layoutY="93.0" prefHeight="30.0" prefWidth="74.0" text="Gender:">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="388.0" layoutY="153.0" prefHeight="30.0" prefWidth="54.0" text="Age:">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="372.0" layoutY="211.0" prefHeight="30.0" prefWidth="70.0" text="E-mail:">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="358.0" layoutY="265.0" prefHeight="30.0" prefWidth="77.0" text="Address:">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="304.0" layoutY="351.0" prefHeight="30.0" prefWidth="137.0" text="Phone Number:">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="352.0" layoutY="410.0" prefHeight="30.0" prefWidth="103.0" text="Category:">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <TextArea fx:id="descriptionText" editable="false" layoutX="1059.0" layoutY="53.0" prefHeight="200.0" prefWidth="285.0" />
+                                        <Label layoutX="1059.0" layoutY="18.0" prefHeight="30.0" prefWidth="219.0" text="Individual Description" />
+                                        <TextField fx:id="nameText" editable="false" layoutX="455.0" layoutY="33.0" />
+                                        <TextField fx:id="genderText" editable="false" layoutX="455.0" layoutY="93.0" />
+                                        <TextField fx:id="ageText" editable="false" layoutX="455.0" layoutY="153.0" />
+                                        <TextField fx:id="emailText" editable="false" layoutX="455.0" layoutY="213.0" prefHeight="26.0" prefWidth="493.0" />
+                                        <TextField fx:id="addressText" editable="false" layoutX="455.0" layoutY="267.0" prefHeight="59.0" prefWidth="494.0" />
+                                        <TextField fx:id="phoneText" editable="false" layoutX="455.0" layoutY="353.0" prefHeight="26.0" prefWidth="494.0" />
+                                        <TextField fx:id="categoryText" editable="false" layoutX="455.0" layoutY="412.0" />
+                                        <Button layoutX="1278.0" layoutY="263.0" mnemonicParsing="false" onAction="#Edit" text="Edit" />
+                              <Button fx:id="Save" layoutX="1186.0" layoutY="263.0" mnemonicParsing="false" onAction="#Save" text="Save" />
+                              <ImageView fx:id="memberImage" fitHeight="280.0" fitWidth="280.0" layoutX="36.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" />
+                                    </children>
+                                </AnchorPane>
+                     </left>
+                     <bottom>
+                        <HBox prefHeight="388.0" prefWidth="1407.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TitledPane animated="false" prefHeight="386.0" prefWidth="706.0" text="Timetable">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="473.0" prefWidth="675.0">
+                                       <children>
+                                          <DatePicker fx:id="startTimePicker" layoutX="411.0" layoutY="13.0" onAction="#dateAction" prefHeight="30.0" prefWidth="223.0" />
+                                          <TableView fx:id="myPageDateReturn" layoutX="7.0" layoutY="91.0" onMouseClicked="#detectAction" prefHeight="258.0" prefWidth="658.0">
+                                            <columns>
+                                              <TableColumn fx:id="coachName" editable="false" prefWidth="117.89111328125" sortable="false" text="Coach's Name" />
+                                              <TableColumn fx:id="coachID" editable="false" prefWidth="75.836669921875" sortable="false" text="Coach ID" />
+                                                <TableColumn fx:id="startTime" editable="false" prefWidth="186.576171875" sortable="false" text="Start Time " />
+                                                <TableColumn fx:id="duration" editable="false" prefWidth="81.923828125" sortable="false" text="Duration" />
+                                                <TableColumn fx:id="courseName" editable="false" prefWidth="194.84771728515625" sortable="false" text="Course Name" />
+                                            </columns>
+                                          </TableView>
+                                          <Label layoutX="374.0" layoutY="20.0" text="Date:" />
+                                          <Label layoutX="30.0" layoutY="20.0" text="Search for:" />
+                                          <TextField fx:id="searchedContent" layoutX="104.0" layoutY="13.0" prefHeight="30.0" prefWidth="180.0" />
+                                          <Button fx:id="search" layoutX="294.0" layoutY="15.0" mnemonicParsing="false" onAction="#searchButtonAction" text="Search" />
+                                          <Button fx:id="displayAllButton" layoutX="339.0" layoutY="50.0" mnemonicParsing="false" onAction="#displayAllAction" prefHeight="34.0" prefWidth="310.0" text="Clear and Display All Contents" textAlignment="CENTER" wrapText="true" />
+                                          <Button fx:id="cancelBookButton" disable="true" layoutX="20.0" layoutY="50.0" mnemonicParsing="false" onAction="#cancelBookAction" prefHeight="34.0" prefWidth="310.0" text="Cancel This Reservation" textAlignment="CENTER" wrapText="true" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                              <TitledPane animated="false" prefHeight="386.0" prefWidth="402.0" text="Account">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="471.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="14.0" text="Balance：" />
+                                          <Label fx:id="balanceText" layoutX="14.0" layoutY="41.0" prefHeight="81.0" prefWidth="235.0" text="0.00">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="14.0" layoutY="122.0" text="level:" />
+                                          <Label fx:id="membershipLevelText" layoutX="13.0" layoutY="158.0" prefHeight="108.0" prefWidth="269.0" text="Senior Member">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="Recharge" layoutX="290.0" layoutY="69.0" mnemonicParsing="false" onAction="#Recharge" text="Recharge" />
+                                          <Button fx:id="Upfrade" layoutX="293.0" layoutY="199.0" mnemonicParsing="false" onAction="#Upgrade" text="Upgrade" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                              <TitledPane animated="false" prefHeight="433.0" prefWidth="364.0" text="Rights">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="237.0" prefWidth="1.0">
+                                       <children>
+                                          <Label fx:id="MemberRights1" layoutY="52.0" prefHeight="81.0" prefWidth="334.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="MemberRights2" layoutX="1.0" layoutY="127.0" prefHeight="81.0" prefWidth="338.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="MemberRights3" layoutY="208.0" prefHeight="81.0" prefWidth="339.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children></AnchorPane>
+                                </content>
+                              </TitledPane>
+                           </children>
+                        </HBox>
+                     </bottom>
+                        </BorderPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="ReserveTab" styleClass="tab" text="Reserve">
+                    <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                            <left>
+                                <AnchorPane prefHeight="687.0" prefWidth="565.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <TitledPane animated="false" prefHeight="688.0" prefWidth="568.0" text="Time table edit">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="657.0" prefWidth="519.0">
+                                                    <children>
+                                                        <Label layoutX="14.0" layoutY="14.0" prefHeight="20.0" prefWidth="72.0" text="Search for:" />
+                                                        <TextField fx:id="searchedContent1" layoutX="86.0" layoutY="9.0" prefHeight="30.0" prefWidth="208.0" />
+                                                        <Button fx:id="search1" layoutX="303.0" layoutY="11.0" mnemonicParsing="false" onAction="#searchButtonAction1" text="Search" />
+                                                        <DatePicker fx:id="startTimePicker1" layoutX="434.0" layoutY="11.0" onAction="#dateAction1" prefHeight="26.0" prefWidth="106.0" />
+                                                        <TableView fx:id="reserveDate" layoutX="14.0" layoutY="85.0" onMouseClicked="#detectAction1" prefHeight="559.0" prefWidth="539.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="coachName1" editable="false" prefWidth="111.94584655761719" sortable="false" text="Coach's Name" />
+                                                                <TableColumn fx:id="coachID1" editable="false" prefWidth="63.130584716796875" sortable="false" text="Coach ID" />
+                                                                <TableColumn fx:id="startTime1" editable="false" prefWidth="144.98931884765625" sortable="false" text="Start Time" />
+                                                                <TableColumn fx:id="duration1" editable="false" prefWidth="73.51068115234375" sortable="false" text="Duration" />
+                                                                <TableColumn fx:id="courseName1" editable="false" prefWidth="143.9993896484375" sortable="false" text="Course Name" />
+                                                            </columns>
+                                                        </TableView>
+                                          <Label layoutX="397.0" layoutY="17.0" text="Date:" />
+                                          <Button fx:id="displayAllButton1" layoutX="290.0" layoutY="48.0" mnemonicParsing="false" onAction="#displayAllAction1" prefHeight="26.0" prefWidth="250.0" text="Display All Available Sessions" textAlignment="CENTER" wrapText="true">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="bookButton" disable="true" layoutX="25.0" layoutY="48.0" mnemonicParsing="false" onAction="#bookAction" prefHeight="26.0" prefWidth="250.0" text="Book This Session" textAlignment="CENTER" wrapText="true">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Button>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </TitledPane>
+                                    </children>
+                                </AnchorPane>
+                            </left>
+                            <center>
+                                <AnchorPane prefHeight="687.0" prefWidth="1131.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <TitledPane animated="false" prefHeight="688.0" prefWidth="840.0" text="Marked Vedio">
+                                 <content>
+                                    <AnchorPane fx:id="MarkedVideoPane" prefHeight="200.0" prefWidth="200.0" />
+                                 </content>
+                                        </TitledPane>
+                                    </children>
+                                </AnchorPane>
+                            </center>
+                        </BorderPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="VideoTab" text="Video">
+               <content>
+                  <AnchorPane fx:id="videoShowPane" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+    <left>
+        <VBox prefHeight="600.0" prefWidth="193.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="MyPageButton" mnemonicParsing="false" onAction="#MyPageButtonClick" prefHeight="81.0" prefWidth="206.0" text="Mypage" />
+                <Button fx:id="ReserveButton" mnemonicParsing="false" onAction="#ReserveButtonClick" prefHeight="81.0" prefWidth="206.0" text="Reserve" />
+                <Button fx:id="VideoButton" mnemonicParsing="false" onAction="#VideoButtonClick" prefHeight="81.0" prefWidth="206.0" text="Video" />
+            </children>
+        </VBox>
+    </left>
+    <top>
+        <AnchorPane prefHeight="74.0" prefWidth="1600.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="1307.0" layoutY="27.0" prefHeight="20.0" prefWidth="156.0" text="Welcome 123" />
+                <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="1485.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="backButton" layoutX="31.0" layoutY="25.0" mnemonicParsing="false" onAction="#backAction" text="Back to Frontpage" />
+            </children>
+        </AnchorPane>
+    </top>
+</BorderPane>

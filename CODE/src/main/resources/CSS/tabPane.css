@@ -1,0 +1,7 @@
+.tab{
+    -fx-tab-max-height: 0;
+}
+
+.tab .tab-header-area{
+    visibility: hidden;
+}
